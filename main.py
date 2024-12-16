@@ -23,6 +23,8 @@ def main():
     print("Cart:")
     print(cart.display_cart())
 
+    print(f"\nTotal articles in the cart: {cart.get_total_items()}")
+
     # Place an order
     try:
         order = Order(cart)

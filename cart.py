@@ -36,3 +36,6 @@ class Cart:
             return "Your cart is empty."
         return "\n".join([f"{product.name} x {quantity} - {product.price * quantity}€"
                           for product, quantity in self.items.items()])
+    def get_total_items(self):
+        # Calcule le nombre total d'articles dans le panier (la somme des quantités)
+        return sum(quantity for quantity in self.items.values())
