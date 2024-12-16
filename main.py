@@ -31,6 +31,14 @@ def main():
         print(order.place_order())
     except ValueError as e:
         print(f"Error: {e}")
+    
+    try:
+        order = Order(cart, discount_percentage=10)  # Applique une remise de 10%
+        print("\nOrder:")
+        print(order.view_order())
+        print(order.place_order())
+    except ValueError as e:
+        print(f"Error: {e}")
 
     # Check remaining stock
     print("\nStock after order:")
