@@ -6,6 +6,23 @@ class Cart:
     def __init__(self):
         self.items = {}  # {product: quantity}
 
+    def update_product_quantity(self, product: Product, new_quantity: int):
+        """
+        Met à jour la quantité d'un produit dans le panier.
+        """
+        if new_quantity < 0:
+            raise ValueError("Quantity cannot be negative.")
+        if product.stock < new_quantity:
+            raise ValueError(f"Cannot update {product.name} to {new_quantity}. Only {product.stock} left.")
+        if new_quantity == 0:
+            self.remove_product(product)
+        else:
+            if product in self.items:
+                self.items[product] = new_quantity
+            else:
+                raise KeyError(f"{product.name} is not in the cart.")
+
+
     def add_product(self, product: Product, quantity: int):
         if product.stock < quantity:
             raise ValueError(f"Cannot add {quantity} of {product.name}. Only {product.stock} left.")
