@@ -20,6 +20,12 @@ def main():
     except ValueError as e:
         print(f"Error: {e}")
 
+     # Vérifie si le panier est vide avant de continuer
+    if cart.is_empty():
+        print("\nThe cart is empty. You cannot place an order.")
+    else:
+        print("\nCart is not empty. Proceeding with the order.")
+
     print("Cart:")
     print(cart.display_cart())
 

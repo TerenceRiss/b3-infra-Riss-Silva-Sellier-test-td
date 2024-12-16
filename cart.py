@@ -28,3 +28,7 @@ class Cart:
     def get_total_items(self):
         # Calcule le nombre total d'articles dans le panier (la somme des quantités)
         return sum(quantity for quantity in self.items.values())
+
+    def is_empty(self):
+        """Retourne True si le panier est vide, sinon False."""
+        return len(self.items) == 0
