@@ -46,5 +46,10 @@ def main():
     print(p2)
     print(p3)
 
+    #generat invoice 
+    # Generate and print the invoice
+    print("\nGenerated Invoice:")
+    print(order.generate_invoice())
+
 if __name__ == "__main__":
     main()
