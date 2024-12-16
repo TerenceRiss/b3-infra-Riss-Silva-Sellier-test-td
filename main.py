@@ -20,6 +20,9 @@ def main():
     except ValueError as e:
         print(f"Error: {e}")
 
+    # Mettre à jour la quantité
+    cart.update_product_quantity(p2, 5)
+
     print("Cart:")
     print(cart.display_cart())
 
