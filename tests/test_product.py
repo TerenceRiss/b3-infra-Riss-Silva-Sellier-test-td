@@ -4,7 +4,6 @@ from product import Product
 class TestProduct(unittest.TestCase):
 
     def setUp(self):
-        # Setup a product instance for testing
         self.product = Product(name="Laptop", price=1200.0, stock=5)
         print("\n[Setup] Created a Product instance for testing.")
 
@@ -39,4 +38,4 @@ class TestProduct(unittest.TestCase):
         print("[Test] String Representation passed.")
 
 if __name__ == "__main__":
-    unittest.main(buffer=False)  # Disable buffering to display prints
+    unittest.main(buffer=False)  
