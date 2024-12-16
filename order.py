@@ -33,3 +33,15 @@ class Order:
             f"Discount: {self.discount_percentage}%\n"
             f"Total: {self.total:.2f}€"
         )
+
+    def generate_invoice(self):
+        """Génère un reçu (facture) détaillé de la commande."""
+        invoice = "\n--- Facture ---\n"
+        invoice += "Items:\n"
+        for product, quantity in self.items.items():
+            invoice += f" - {product.name} x {quantity} @ {product.price:.2f}€ each = {product.price * quantity:.2f}€\n"
+        invoice += f"\nSubtotal: {self.subtotal:.2f}€"
+        invoice += f"\nDiscount: {self.discount_percentage:.2f}%"
+        invoice += f"\nTotal: {self.total:.2f}€"
+        invoice += "\n--- Merci pour votre commande! ---\n"
+        return invoice
